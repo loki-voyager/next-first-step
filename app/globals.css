@@ -1,27 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body,
+html {
+  @apply bg-bg-dark text-text w-full h-full flex flex-col;
+  font-family: 'Rubik', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+header{
+  @apply flex gap-1 p-2 bg-cust-black justify-center
+}
+header > .button{
+  @apply bg-bg-dark
+}
+main{
+  @apply p-2 flex-1 container max-w-5xl mx-auto
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.button{
+  @apply bg-cust-black font-medium px-3 py-1.5 rounded cursor-pointer hover:bg-cust-green hover:bg-opacity-50 duration-150 active:bg-cust-green
+}
+
+.label{
+  @apply bg-cust-green bg-opacity-50 text-2xl px-4 py-2 rounded inline-flex self-center
+}
+
+.sublabel{
+  @apply bg-cust-black text-cust-green text-2xl inline-block px-4 py-2 rounded
+}
+
+.About{
+  @apply flex flex-col  gap-1
+}
+
+.blog{
+  @apply flex flex-col
+}
+
+.list{
+  @apply flex flex-col gap-1 mt-4
+}
+
+.post-body{
+  @apply text-lg py-4 px-8
 }
